@@ -21,6 +21,15 @@ interface Message {
 }
 
 const Home = () => {
+  // Simple client-side guard: redirect to /login if no token
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const token = localStorage.getItem('access_token')
+      if (!token) {
+        window.location.href = '/login'
+      }
+    }
+  }, [])
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
@@ -71,7 +80,7 @@ const Home = () => {
         ]);
 
         // Create URL with checkpoint ID if it exists
-        let url = `https://perplexity-api.onrender.com/chat_stream/${encodeURIComponent(userInput)}`;
+        let url = `http://127.0.0.1:8000/chat_stream/${encodeURIComponent(userInput)}`;
         if (checkpointId) {
           url += `?checkpoint_id=${encodeURIComponent(checkpointId)}`;
         }
