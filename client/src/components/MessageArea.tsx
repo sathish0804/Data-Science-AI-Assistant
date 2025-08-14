@@ -110,7 +110,7 @@ const SearchStages = ({ searchInfo }) => {
 const MessageArea = ({ messages }) => {
     return (
         <div className="flex-grow overflow-y-auto bg-[#FCFCF8] border-b border-gray-100" style={{ minHeight: 0 }}>
-            <div className="max-w-4xl mx-auto p-6">
+            <div className="max-w-6xl mx-auto p-6">
                 {messages.map((message) => (
                     <div key={message.id} className={`flex ${message.isUser ? 'justify-end' : 'justify-start'} mb-5`}>
                         <div className="flex flex-col max-w-md">
