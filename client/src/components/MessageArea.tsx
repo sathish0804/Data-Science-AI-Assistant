@@ -113,7 +113,7 @@ const MessageArea = ({ messages }) => {
             <div className="max-w-6xl mx-auto p-6">
                 {messages.map((message) => (
                     <div key={message.id} className={`flex ${message.isUser ? 'justify-end' : 'justify-start'} mb-5`}>
-                        <div className="flex flex-col max-w-md">
+                        <div className="flex flex-col max-w-3xl">
                             {/* Search Status Display - Now ABOVE the message */}
                             {!message.isUser && message.searchInfo && (
                                 <SearchStages searchInfo={message.searchInfo} />
@@ -123,7 +123,7 @@ const MessageArea = ({ messages }) => {
                             <div
                                 className={`rounded-lg py-3 px-5 ${message.isUser
                                     ? 'bg-gradient-to-br from-[#5E507F] to-[#4A3F71] text-white rounded-br-none shadow-md'
-                                    : 'bg-[#F3F3EE] text-gray-800 border border-gray-200 rounded-bl-none shadow-sm'
+                                    : 'bg-[#FCFCF8] w-full text-gray-800 border border-gray-200 rounded-bl-none shadow-sm'
                                     }`}
                             >
                                 {message.isLoading ? (
